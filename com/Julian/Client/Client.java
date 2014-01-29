@@ -15,7 +15,7 @@ public class Client {
      * @param args 
      */
     public static void main(String[] args) {
-        //Probando la GUI del cliente
+        //Testing the Client's gui
         GUIClient g = new GUIClient();
     }
 }

@@ -82,7 +82,6 @@ public class GUIClient extends JFrame {
         c.fill = GridBagConstraints.CENTER;
         this.add(directoryPanel, c);
         
-        
         this.validate();
         this.pack();
         this.setVisible(true);
