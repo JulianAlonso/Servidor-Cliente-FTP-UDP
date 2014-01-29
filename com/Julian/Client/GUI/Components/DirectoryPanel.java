@@ -16,8 +16,17 @@ public class DirectoryPanel extends JPanel {
     private JScrollPane dirPane;
     
     public DirectoryPanel() {
-        //Cambio de alvaro.
+        generateComponents();
+        addComponents();
     }
     
+    private void generateComponents() {
+        this.dir = new JList();
+        this.dirPane = new JScrollPane(dir);
+    }
+    
+    private void addComponents() {
+        this.add(dirPane);
+    }
     
 }
