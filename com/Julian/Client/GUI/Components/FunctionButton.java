@@ -8,6 +8,8 @@ package com.Julian.Client.GUI.Components;
 
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 
@@ -18,16 +20,14 @@ import javax.swing.JButton;
  */
 public class FunctionButton extends JButton{
     
-    private String textButton;
-    private Image imgButton;
-    
     public FunctionButton(String textButton, ActionListener listener){
-        this.textButton = textButton;
+        super(textButton);
         this.addActionListener(listener);
     }
     
     public FunctionButton(Image imgButton,ActionListener listener){
-        this.imgButton = imgButton;
+        super(new ImageIcon(imgButton));
+        this.setBorder(BorderFactory.createEmptyBorder());
         this.addActionListener(listener);
     }
 }

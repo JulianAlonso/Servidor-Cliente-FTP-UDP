@@ -2,6 +2,7 @@
 
 package com.Julian.Client.GUI.Components;
 
+import java.awt.Dimension;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -23,6 +24,7 @@ public class DirectoryPanel extends JPanel {
     private void generateComponents() {
         this.dir = new JList();
         this.dirPane = new JScrollPane(dir);
+        this.dirPane.setPreferredSize(new Dimension(400, 300));
     }
     
     private void addComponents() {
