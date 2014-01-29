@@ -6,6 +6,7 @@ import com.Julian.Client.GUI.Components.DirectoryPanel;
 import com.Julian.Client.GUI.Components.FunctionButton;
 import com.Julian.Client.Res.FunctionButtonListeners;
 import com.Julian.Res.Images;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -82,6 +83,8 @@ public class GUIClient extends JFrame {
         c.fill = GridBagConstraints.CENTER;
         this.add(directoryPanel, c);
         
+        this.getContentPane().setBackground(Color.WHITE);
+        this.setResizable(false);
         this.validate();
         this.pack();
         this.setVisible(true);
@@ -92,8 +95,8 @@ public class GUIClient extends JFrame {
         this.upButton = new FunctionButton(Images.UP_FOLDER, FunctionButtonListeners.getUpListener());
         this.deleteButton = new FunctionButton(Images.DELETE_FOLDER, FunctionButtonListeners.getDeleteListener());
         this.createButton = new FunctionButton(Images.NEW_FOLDER, FunctionButtonListeners.getCreateListener());
-        this.uploadButton = new FunctionButton("Upload Archive", FunctionButtonListeners.uploadListener());
-        this.downloadButton = new FunctionButton("Download Archive", FunctionButtonListeners.downloadListener());
+        this.uploadButton = new FunctionButton(Images.UPLOAD, FunctionButtonListeners.uploadListener());
+        this.downloadButton = new FunctionButton(Images.DOWNLOAD, FunctionButtonListeners.downloadListener());
         
     }
     
