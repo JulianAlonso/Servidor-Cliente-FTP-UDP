@@ -3,10 +3,9 @@
  * and open the template in the editor.
  */
 package com.Julian.Server.Threads;
-
-import com.Julian.Client.Configuration.Config;
 import com.Julian.Client.Utils.Receive;
 import com.Julian.Entitys.Message;
+import com.Julian.Server.Configuration.Config;
 import com.Julian.Server.Utils.MainThreadUtils;
 
 
@@ -17,7 +16,7 @@ import com.Julian.Server.Utils.MainThreadUtils;
 public class MainThread extends Thread {
     
     public MainThread() {
-        
+        System.out.println("Listening on port: "+Config.PORT_SERVER);
     }
     
     @Override

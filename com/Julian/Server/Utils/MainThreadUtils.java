@@ -5,6 +5,8 @@
 package com.Julian.Server.Utils;
 
 import com.Julian.Entitys.Message;
+import com.Julian.Server.Entitys.Client;
+import com.Julian.Server.Res.Clients;
 
 /**
  *
@@ -16,6 +18,7 @@ public class MainThreadUtils {
         switch(message.getHeader()) {
             case CONECT: 
                 SendUtils.sendRootList(message);
+                Clients.addClient(new Client(message.getAddress(), message.getPort()));
                 break;
             case UPLOAD:
                 break;

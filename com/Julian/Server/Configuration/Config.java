@@ -11,6 +11,7 @@ import java.io.File;
  * @author admin
  */
 public class Config {
+    public static int PORT_SERVER = 9998;
     private static File documentRoot;
     
     public static void setDocumentRoot(File documentRoot) {

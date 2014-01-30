@@ -47,7 +47,7 @@ public class Message implements Serializable {
      * Return the client's address.
      * @return InetAddress - The client's address.
      */
-    public String getAddres() {
+    public String getAddress() {
         return this.address;
     }
     

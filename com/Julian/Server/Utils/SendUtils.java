@@ -28,6 +28,6 @@ public class SendUtils {
         
         ListMessage lm = new ListMessage(dfl);
         
-        Send.send(lm, message.getAddres(), message.getPort());
+        Send.send(lm, message.getAddress(), message.getPort());
     }
 }
