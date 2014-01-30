@@ -7,7 +7,6 @@ package com.Julian.Server.Utils;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Configuration.Config;
-import com.Julian.Utils.Send;
 import javax.swing.DefaultListModel;
 
 /**
@@ -24,10 +23,10 @@ public class SendUtils {
             dfl.addElement(element);
         }
         
-        ListMessage lm = new ListMessage(dfl, message.getAddres().toString(), message.getPort());
+        ListMessage lm = new ListMessage(dfl);
         
-        System.out.println(message.getAddres().toString());
+        System.out.println(message.getAddres());
         
-        Send.send(lm, message.getAddres().toString(), message.getPort());
+        Send.send(lm, message.getAddres(), message.getPort());
     }
 }

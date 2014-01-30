@@ -6,8 +6,6 @@ package com.Julian.Entitys;
 
 import com.Julian.Res.Header;
 import java.io.Serializable;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  *
@@ -16,12 +14,16 @@ import java.net.UnknownHostException;
 public class Message implements Serializable {
     
     private Header header;
-    private InetAddress address;
+    private String address;
     private int port;
+    
+    public Message(Header header) {
+        this.header = header;
+    }
     
     public Message(Header header, String address, int port) {
         this.header = header;
-        this.address = generateAddress(address);
+        this.address = address;
         this.port = port;
     }
     
@@ -45,15 +47,8 @@ public class Message implements Serializable {
      * Return the client's address.
      * @return InetAddress - The client's address.
      */
-    public InetAddress getAddres() {
+    public String getAddres() {
         return this.address;
     }
     
-    private InetAddress generateAddress(String address) {
-        try {
-            return InetAddress.getByName(address);
-        } catch (UnknownHostException ex) {
-            return null;
-        }
-    }
 }

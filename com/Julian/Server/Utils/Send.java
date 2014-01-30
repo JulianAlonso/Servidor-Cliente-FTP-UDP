@@ -1,6 +1,6 @@
 
 
-package com.Julian.Utils;
+package com.Julian.Server.Utils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class Send {
 
             bytesEnviar = serialize(object);
             
-            System.out.println(bytesEnviar.length);
+            System.out.println(puerto);
 
             socket = new MulticastSocket();
             paquete = new DatagramPacket(bytesEnviar, bytesEnviar.length, InetAddress.getByName(hostdestino), puerto);
@@ -37,6 +37,7 @@ public class Send {
             System.out.println("Error al asignar el socket");
         } catch (UnknownHostException ex) {
             System.out.println("Error al crear el paquete");
+            ex.printStackTrace();
         } catch (IOException ex) {
             System.out.println("Error en el envío del paquete");
         }

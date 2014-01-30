@@ -1,6 +1,6 @@
 
 
-package com.Julian.Utils;
+package com.Julian.Client.Utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

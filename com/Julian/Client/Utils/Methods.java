@@ -8,9 +8,6 @@ import com.Julian.Client.Configuration.Config;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Res.Header;
-import com.Julian.Utils.Receive;
-import com.Julian.Utils.Send;
-
 
 /**
  *
@@ -19,9 +16,9 @@ import com.Julian.Utils.Send;
 public class Methods {
     
     public static ListMessage connect() {
-        Message connect = new Message(Header.CONECT, Config.SERVER_ADDRES, Config.PORT);
-        Send.send(connect, Config.SERVER_ADDRES, Config.PORT);
-        ListMessage lm = (ListMessage)Receive.receive(Config.PORT);
+        Message connect = new Message(Header.CONECT, Config.CLIENT_ADDRES, Config.PORT_CLIENT);
+        Send.send(connect, Config.SERVER_ADDRES, Config.PORT_SERVER);
+        ListMessage lm = (ListMessage)Receive.receive(Config.PORT_CLIENT);
         return lm;
     }
 }

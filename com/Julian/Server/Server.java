@@ -22,7 +22,6 @@ public class Server {
     
     private static void onStart() {
         Config.setDocumentRoot(Selector.getJFFile());
-        System.out.println(Config.getDocumentRoot().getPath());
         mainThread.start();
     }
 }

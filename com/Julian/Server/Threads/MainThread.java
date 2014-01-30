@@ -5,17 +5,16 @@
 package com.Julian.Server.Threads;
 
 import com.Julian.Client.Configuration.Config;
+import com.Julian.Client.Utils.Receive;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Utils.MainThreadUtils;
-import com.Julian.Utils.Receive;
+
 
 /**
  *
  * @author admin
  */
-public class MainThread extends Thread{
-    
-    
+public class MainThread extends Thread {
     
     public MainThread() {
         
@@ -24,7 +23,7 @@ public class MainThread extends Thread{
     @Override
     public void run() {
         while(true) {
-            Object receive = Receive.receive(Config.PORT);
+            Object receive = Receive.receive(Config.PORT_SERVER);
             if(receive instanceof Message) {
                 MainThreadUtils.routeMessage((Message)receive);
             }

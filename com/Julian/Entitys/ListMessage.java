@@ -5,18 +5,19 @@
 package com.Julian.Entitys;
 
 import com.Julian.Res.Header;
+import java.io.Serializable;
 import javax.swing.DefaultListModel;
 
 /**
  *
  * @author admin
  */
-public class ListMessage extends Message{
+public class ListMessage extends Message implements Serializable {
     
     private DefaultListModel listModel;
     
-    public ListMessage(DefaultListModel listModel, String address, int port) {
-        super(Header.LIST, address, port);
+    public ListMessage(DefaultListModel listModel) {
+        super(Header.LIST);
         this.listModel = listModel;
     }
      
