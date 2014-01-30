@@ -7,6 +7,7 @@ package com.Julian.Server.Utils;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Configuration.Config;
+import java.io.File;
 import javax.swing.DefaultListModel;
 
 /**
@@ -20,7 +21,9 @@ public class SendUtils {
         String[] elements = Config.getDocumentRoot().list();
 
         for (String element : elements) {
-            dfl.addElement(element);
+            File comp = new File(Config.getDocumentRoot()+"/"+element);
+            if(!comp.isHidden())
+                dfl.addElement(element);
         }
         
         ListMessage lm = new ListMessage(dfl);
