@@ -2,7 +2,6 @@
 
 package com.Julian.Utils;
 
-import com.Julian.Entitys.Message;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,11 +15,12 @@ import java.net.SocketException;
  */
 public class Receive {
     
+    static DatagramSocket socket;
+    static DatagramPacket paquete = null;
       
     public static Object receive(int port) {
 
-        DatagramSocket socket;
-        DatagramPacket paquete = null;
+        
         byte recibidos[] = new byte[20000];
 
         try {

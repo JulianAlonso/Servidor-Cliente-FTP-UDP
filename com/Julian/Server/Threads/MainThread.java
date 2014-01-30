@@ -24,19 +24,11 @@ public class MainThread extends Thread{
     @Override
     public void run() {
         while(true) {
-            
-            receive();
-            
-        }
-    }
-    
-    
-    private void receive(){
-        Object receive = Receive.receive(Config.PORT);
-            
+            Object receive = Receive.receive(Config.PORT);
             if(receive instanceof Message) {
                 MainThreadUtils.routeMessage((Message)receive);
             }
+        }
     }
     
 }

@@ -24,7 +24,10 @@ public class SendUtils {
             dfl.addElement(element);
         }
         
-        Send.send(new ListMessage(dfl, message.getAddres().toString(), message.getPort()),
-                message.getAddres().toString(), message.getPort());
+        ListMessage lm = new ListMessage(dfl, message.getAddres().toString(), message.getPort());
+        
+        System.out.println(message.getAddres().toString());
+        
+        Send.send(lm, message.getAddres().toString(), message.getPort());
     }
 }

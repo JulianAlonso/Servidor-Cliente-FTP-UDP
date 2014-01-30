@@ -9,6 +9,6 @@ package com.Julian.Client.Configuration;
  * @author admin
  */
 public class Config {
-    public static String SERVER_ADDRES = "120.0.0.1";
+    public static String SERVER_ADDRES = "127.0.0.1";
     public static int PORT = 9999;
 }
