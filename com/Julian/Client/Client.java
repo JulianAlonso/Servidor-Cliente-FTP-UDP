@@ -4,7 +4,7 @@ package com.Julian.Client;
 
 import com.Julian.Client.GUI.Components.DirectoryPanel;
 import com.Julian.Client.GUI.GUIClient;
-import com.Julian.Client.Utils.Methods;
+import com.Julian.Client.Utils.SendUtils;
 
 /**
  *
@@ -23,6 +23,6 @@ public class Client {
     }
     
     private static void onStart() {
-        DirectoryPanel.setElements(Methods.connect().getModel());
+        DirectoryPanel.setElements(SendUtils.connect().getModel());
     }
 }

@@ -7,8 +7,6 @@ package com.Julian.Server.Utils;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Configuration.Config;
-import java.io.File;
-import javax.swing.DefaultListModel;
 
 /**
  *
@@ -17,17 +15,10 @@ import javax.swing.DefaultListModel;
 public class SendUtils {
 
     public static void sendRootList(Message message) {
-        DefaultListModel dfl = new DefaultListModel();
         String[] elements = Config.getDocumentRoot().list();
-
-        for (String element : elements) {
-            File comp = new File(Config.getDocumentRoot()+"/"+element);
-            if(!comp.isHidden())
-                dfl.addElement(element);
-        }
-        
-        ListMessage lm = new ListMessage(dfl);
+        ListMessage lm = new ListMessage(Gets.getLisModel(elements));
         
         Send.send(lm, message.getAddress(), message.getPort());
     }
+    
 }

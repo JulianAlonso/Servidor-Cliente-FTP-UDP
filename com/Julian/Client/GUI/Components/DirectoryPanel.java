@@ -1,7 +1,6 @@
-
-
 package com.Julian.Client.GUI.Components;
 
+import com.Julian.Client.Res.DirectoryPanelListeners;
 import java.awt.Dimension;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -20,6 +19,7 @@ public class DirectoryPanel extends JPanel {
     public DirectoryPanel() {
         generateComponents();
         addComponents();
+        addListeners();
     }
     
     public static void setElements(DefaultListModel elements) {
@@ -36,4 +36,7 @@ public class DirectoryPanel extends JPanel {
         this.add(dirPane);
     }
     
+    private void addListeners() {
+        dir.addMouseListener(DirectoryPanelListeners.getDoubleClickListener());
+    }
 }

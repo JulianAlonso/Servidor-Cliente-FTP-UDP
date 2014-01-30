@@ -19,13 +19,13 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Subir Carpeta Actual.
+                //Go to parent folder.
             }
         };
     }
     
     /**
-     * Delete current selected folder.
+     * Delete current selected folder or file.
      * @return Action Listener
      */
     public static ActionListener getDeleteListener() {
