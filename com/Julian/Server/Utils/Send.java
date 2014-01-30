@@ -26,8 +26,6 @@ public class Send {
             byte bytesEnviar[];
 
             bytesEnviar = serialize(object);
-            
-            System.out.println(puerto);
 
             socket = new MulticastSocket();
             paquete = new DatagramPacket(bytesEnviar, bytesEnviar.length, InetAddress.getByName(hostdestino), puerto);
