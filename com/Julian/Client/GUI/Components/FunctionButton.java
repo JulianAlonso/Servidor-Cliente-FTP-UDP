@@ -28,6 +28,7 @@ public class FunctionButton extends JButton{
     public FunctionButton(Image imgButton,ActionListener listener){
         super(new ImageIcon(imgButton));
         this.setBorder(BorderFactory.createEmptyBorder());
+        this.setOpaque(false);
         this.addActionListener(listener);
     }
 }

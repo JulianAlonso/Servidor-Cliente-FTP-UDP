@@ -25,8 +25,6 @@ public class SendUtils {
         
         ListMessage lm = new ListMessage(dfl);
         
-        System.out.println(message.getAddres());
-        
         Send.send(lm, message.getAddres(), message.getPort());
     }
 }

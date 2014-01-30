@@ -5,14 +5,13 @@
 package com.Julian.Entitys;
 
 import com.Julian.Res.Header;
-import java.io.Serializable;
 import javax.swing.DefaultListModel;
 
 /**
  *
  * @author admin
  */
-public class ListMessage extends Message implements Serializable {
+public class ListMessage extends Message {
     
     private DefaultListModel listModel;
     
