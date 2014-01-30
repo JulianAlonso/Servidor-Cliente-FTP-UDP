@@ -3,6 +3,7 @@
 package com.Julian.Client.GUI.Components;
 
 import java.awt.Dimension;
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -13,7 +14,7 @@ import javax.swing.JScrollPane;
  */
 public class DirectoryPanel extends JPanel {
     
-    private JList dir;
+    private static JList dir;
     private JScrollPane dirPane;
     
     public DirectoryPanel() {
@@ -21,8 +22,12 @@ public class DirectoryPanel extends JPanel {
         addComponents();
     }
     
+    public static void setElements(DefaultListModel elements) {
+        DirectoryPanel.dir.setModel(elements);
+    }
+    
     private void generateComponents() {
-        this.dir = new JList();
+        DirectoryPanel.dir = new JList();
         this.dirPane = new JScrollPane(dir);
         this.dirPane.setPreferredSize(new Dimension(400, 300));
     }
