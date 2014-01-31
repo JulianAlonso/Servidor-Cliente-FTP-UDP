@@ -8,12 +8,13 @@ import com.Julian.Res.Header;
  *
  * @author julialonso
  */
-public class DownMessage extends Message {
+public class MoveMessage extends Message {
     
     private String element;
     
-    public DownMessage(Header header, String element, String address, int port) {
+    public MoveMessage(Header header, String element, String address, int port) {
         super(header, address, port);
+        this.element = element;
     }
     
     public String getElement() {

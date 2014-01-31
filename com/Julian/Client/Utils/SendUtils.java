@@ -5,7 +5,7 @@
 package com.Julian.Client.Utils;
 
 import com.Julian.Client.Configuration.Config;
-import com.Julian.Entitys.DownMessage;
+import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Res.Header;
@@ -22,8 +22,8 @@ public class SendUtils {
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
     
-    public static ListMessage downTo(String element) {
-        DownMessage down = new DownMessage(Header.MOVEDOWN, element, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
+    public static ListMessage moveTo(String element) {
+        MoveMessage down = new MoveMessage(Header.MOVE, element, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
         Send.send(down, Config.SERVER_ADDRESS, Config.PORT_SERVER);
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }

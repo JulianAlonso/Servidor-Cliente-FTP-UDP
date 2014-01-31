@@ -12,7 +12,6 @@ public enum Header {
     CONECT,
     UPLOAD,
     DOWNLOAD,
-    MOVEDOWN,
-    MOVEUP,
+    MOVE,
     LIST
 }

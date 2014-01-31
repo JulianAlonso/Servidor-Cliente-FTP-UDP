@@ -21,4 +21,9 @@ public class SendUtils {
         Send.send(lm, message.getAddress(), message.getPort());
     }
     
+    public static void sendCustomList(Message message, String[] list) {
+        Send.send(new ListMessage(Gets.getLisModel(list)), 
+                message.getAddress(), message.getPort());
+    }
+    
 }

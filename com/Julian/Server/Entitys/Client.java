@@ -2,10 +2,11 @@
 
 package com.Julian.Server.Entitys;
 
-import com.Julian.Entitys.DownMessage;
+import com.Julian.Entitys.MoveMessage;
 import com.Julian.Server.Configuration.Config;
 import com.Julian.Server.Utils.Gets;
 import com.Julian.Server.Utils.Send;
+import com.Julian.Server.Utils.SendUtils;
 import java.io.File;
 
 /**
@@ -40,14 +41,9 @@ public class Client {
         return this.actualDirectory;
     }
     
-    public void moveDownAndSend(DownMessage message) {
-        setActualDirectory(
-                new File(getActualDirectory()+"/"+message.getElement()));
-        Send.send(Gets.getLisModel(getActualDirectory().list()),
-                message.getAddress(), message.getPort());
+    public void moveAndSend(MoveMessage message) {
+        setActualDirectory(new File(getActualDirectory()+"/"+message.getElement()));
+        SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
-    public void moveUpAndSend() {
-        
-    }
 }

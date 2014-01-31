@@ -4,7 +4,7 @@
  */
 package com.Julian.Server.Utils;
 
-import com.Julian.Entitys.DownMessage;
+import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Entitys.Client;
 import com.Julian.Server.Res.Clients;
@@ -25,12 +25,10 @@ public class MainThreadUtils {
                 break;
             case DOWNLOAD:
                 break;
-            case MOVEDOWN:
+            case MOVE:
                 Clients.getClient(
-                        message.getAddress()).moveDownAndSend(
-                        ((DownMessage)message));
-                break;
-            case MOVEUP:
+                        message.getAddress()).moveAndSend(
+                        ((MoveMessage)message));
                 break;
             case LIST:
                 break;
