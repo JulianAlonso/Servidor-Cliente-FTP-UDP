@@ -2,10 +2,10 @@
 
 package com.Julian.Server.Entitys;
 
+import com.Julian.Entitys.Message;
 import com.Julian.Entitys.MoveMessage;
 import com.Julian.Server.Configuration.Config;
-import com.Julian.Server.Utils.Gets;
-import com.Julian.Server.Utils.Send;
+import com.Julian.Server.Utils.Checks;
 import com.Julian.Server.Utils.SendUtils;
 import java.io.File;
 
@@ -41,9 +41,17 @@ public class Client {
         return this.actualDirectory;
     }
     
-    public void moveAndSend(MoveMessage message) {
-        setActualDirectory(new File(getActualDirectory()+"/"+message.getElement()));
+    public void moveDownAndSend(MoveMessage message) {
+        if(Checks.isDirectory(message.getElement(), getActualDirectory()))
+            setActualDirectory(new File(getActualDirectory()+"/"+message.getElement()));
+        System.out.println("Estoy en: "+getActualDirectory());
         SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
+    public void moveUpAndSend(Message message) {
+        if(!actualDirectory.getPath().equals(Config.getDocumentRoot().getPath()))
+            setActualDirectory(new File(getActualDirectory().getParent()));
+        System.out.println("Estoy en: "+getActualDirectory());
+        SendUtils.sendCustomList(message, getActualDirectory().list());
+    }
 }

@@ -25,10 +25,15 @@ public class MainThreadUtils {
                 break;
             case DOWNLOAD:
                 break;
-            case MOVE:
+            case MOVEDOWN:
                 Clients.getClient(
-                        message.getAddress()).moveAndSend(
+                        message.getAddress()).moveDownAndSend(
                         ((MoveMessage)message));
+                break;
+            case MOVEUP:
+                Clients.getClient(
+                        message.getAddress()).moveUpAndSend(
+                        (Message)message);
                 break;
             case LIST:
                 break;

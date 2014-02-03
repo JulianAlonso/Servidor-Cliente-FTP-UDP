@@ -21,8 +21,8 @@ public class DirectoryPanelListeners {
                 if (evt.getClickCount() == 2) {
                     int index = list.locationToIndex(evt.getPoint());
                     try {
-                    list.setModel(
-                            SendUtils.moveTo(
+                        list.setModel(
+                            SendUtils.moveDownTo(
                             (String)list.getModel().getElementAt(index)).getModel());
                     } catch (Exception ex) {
                         System.out.println("This is not an archive");

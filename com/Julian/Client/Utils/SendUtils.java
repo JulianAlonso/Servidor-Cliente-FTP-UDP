@@ -22,9 +22,15 @@ public class SendUtils {
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
     
-    public static ListMessage moveTo(String element) {
-        MoveMessage down = new MoveMessage(Header.MOVE, element, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
+    public static ListMessage moveDownTo(String element) {
+        MoveMessage down = new MoveMessage(Header.MOVEDOWN, element, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
         Send.send(down, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+        return (ListMessage)Receive.receive(Config.PORT_CLIENT);
+    }
+    
+    public static ListMessage moveUp() {
+        Message up = new Message(Header.MOVEUP, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
+        Send.send(up, Config.SERVER_ADDRESS, Config.PORT_SERVER);
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
 }

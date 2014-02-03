@@ -2,11 +2,9 @@
 
 package com.Julian.Client.Res;
 
-import com.Julian.Client.Configuration.Config;
+import com.Julian.Client.Configuration.GUIConfig;
 import com.Julian.Client.GUI.Components.DirectoryPanel;
-import com.Julian.Client.Utils.Receive;
 import com.Julian.Client.Utils.SendUtils;
-import com.Julian.Entitys.ListMessage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,7 +22,7 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DirectoryPanel.setElements(SendUtils.moveTo("/..").getModel());
+                DirectoryPanel.setElements(SendUtils.moveUp().getModel());
             }
         };
     }
