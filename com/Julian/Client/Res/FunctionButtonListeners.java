@@ -2,11 +2,12 @@
 
 package com.Julian.Client.Res;
 
-import com.Julian.Client.Configuration.GUIConfig;
 import com.Julian.Client.GUI.Components.DirectoryPanel;
 import com.Julian.Client.Utils.SendUtils;
+import com.Julian.Client.Utils.Selector;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  *
@@ -61,7 +62,10 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Crear una nueva carpeta.
+                File upload = Selector.getJFFile();
+                if(upload != null)
+                    DirectoryPanel.setElements(
+                            SendUtils.uploadFile(upload).getModel());
             }
         };
     }

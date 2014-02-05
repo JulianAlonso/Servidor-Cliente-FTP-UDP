@@ -4,6 +4,7 @@
  */
 package com.Julian.Server.Utils;
 
+import com.Julian.Entitys.FileMessage;
 import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Server.Entitys.Client;
@@ -22,6 +23,9 @@ public class MainThreadUtils {
                 Clients.addClient(new Client(message.getAddress(), message.getPort()));
                 break;
             case UPLOAD:
+                Clients.getClient(
+                        message.getAddress()).createFile(
+                        (FileMessage)message);
                 break;
             case DOWNLOAD:
                 break;

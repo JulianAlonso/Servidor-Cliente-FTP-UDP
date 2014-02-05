@@ -1,14 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.Julian.Client.Utils;
 
 import com.Julian.Client.Configuration.Config;
+import com.Julian.Entitys.FileMessage;
 import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.ListMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Res.Header;
+import java.io.File;
 
 /**
  *
@@ -31,6 +29,13 @@ public class SendUtils {
     public static ListMessage moveUp() {
         Message up = new Message(Header.MOVEUP, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
         Send.send(up, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+        return (ListMessage)Receive.receive(Config.PORT_CLIENT);
+    }
+    
+    public static ListMessage uploadFile(File file) {
+        FileMessage upload = new FileMessage(Header.UPLOAD, Config.CLIENT_ADDRESS, Config.PORT_CLIENT, file);
+        Send.send(upload, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+        //TODO recivir comprobacion de que se ha enviado satisfactoriamente.
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
 }
