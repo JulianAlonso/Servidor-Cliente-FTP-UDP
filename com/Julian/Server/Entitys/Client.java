@@ -58,7 +58,7 @@ public class Client {
     }
     
     public void createFile(FileMessage message) {
-        if (CreateAndDeleteUtils.createFile(message.getFile(), getActualDirectory()))
+        if (CreateAndDeleteUtils.createFile(message, getActualDirectory()))
             SendUtils.sendCustomList(message, getActualDirectory().list());
     }
 }
