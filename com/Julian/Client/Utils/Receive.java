@@ -21,7 +21,7 @@ public class Receive {
     public static Object receive(int port) {
 
         
-        byte recibidos[] = new byte[20000];
+        byte recibidos[] = new byte[50000];
 
         try {
             socket = new DatagramSocket(port);
@@ -51,7 +51,8 @@ public class Receive {
             is.close();
             return objetoAuxiliar;
         } catch (IOException ex) {
-            System.out.println("Error al extraer datos del paquete");
+            //System.out.println("Error al extraer datos del paquete");
+            ex.printStackTrace();
         } catch (ClassNotFoundException ex) {
             System.out.println("Error al convertir a Mensaje");
         }

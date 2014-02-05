@@ -21,7 +21,7 @@ public class Receive {
     public static Object receive(int port) {
 
         
-        byte recibidos[] = new byte[20000];
+        byte recibidos[] = new byte[50000];
 
         try {
             socket = new DatagramSocket(port);

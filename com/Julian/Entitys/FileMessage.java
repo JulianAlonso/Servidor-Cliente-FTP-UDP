@@ -21,7 +21,7 @@ public class FileMessage extends Message {
         super(header, address, port);
         this.name = file.getName();
         try {
-            data = Files.readAllBytes(Paths.get(file.getAbsolutePath()));
+            data = Files.readAllBytes(Paths.get(file.getPath()));
         } catch (IOException ex) {/* */}
     }
     
