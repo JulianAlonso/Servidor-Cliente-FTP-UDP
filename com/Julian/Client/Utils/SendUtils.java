@@ -45,4 +45,16 @@ public class SendUtils {
        Send.send(download, Config.SERVER_ADDRESS, Config.PORT_SERVER);
        return (FileMessage)Receive.receive(Config.PORT_CLIENT);
    }
+   
+   public static ListMessage deleteFile(String element) {
+       ElementMessage delete = new ElementMessage(Header.DELETE, Config.CLIENT_ADDRESS, Config.PORT_CLIENT, element);
+       Send.send(delete, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+       return (ListMessage)Receive.receive(Config.PORT_CLIENT);
+   }
+   
+   public static ListMessage createDirectory(String element) {
+       ElementMessage create = new ElementMessage(Header.CREATE, Config.CLIENT_ADDRESS, Config.PORT_CLIENT, element);
+       Send.send(create, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+       return (ListMessage)Receive.receive(Config.PORT_CLIENT);
+   }
 }

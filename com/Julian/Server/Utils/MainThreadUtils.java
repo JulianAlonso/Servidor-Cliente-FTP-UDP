@@ -43,6 +43,15 @@ public class MainThreadUtils {
                         message.getAddress()).moveUpAndSend(
                         (Message)message);
                 break;
+            case CREATE:
+                Clients.getClient(
+                        message.getAddress()).createFolder(
+                        (ElementMessage)message);
+                break;
+            case DELETE:
+                Clients.getClient(message.getAddress()).deleteFolder(
+                        (ElementMessage)message);
+                break;
             case LIST:
                 break;
         }

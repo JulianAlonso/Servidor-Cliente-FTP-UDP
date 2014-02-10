@@ -68,4 +68,16 @@ public class Client {
                 new File(getActualDirectory().getPath()
                          +"/"+message.getElementName()));
     }
+    
+    public void createFolder(ElementMessage message) {
+        File directory = new File(getActualDirectory().getPath()+"/"+message.getElementName());
+        directory.mkdir();
+        SendUtils.sendCustomList(message, getActualDirectory().list());
+    }
+    
+    public void deleteFolder(ElementMessage message) {
+        File directory = new File(getActualDirectory().getPath()+"/"+message.getElementName());
+        CreateAndDeleteUtils.deleteDirectory(directory);
+        SendUtils.sendCustomList(message, getActualDirectory().list());
+    }
 }

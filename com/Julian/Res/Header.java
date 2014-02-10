@@ -14,5 +14,7 @@ public enum Header {
     DOWNLOAD,
     MOVEUP,
     MOVEDOWN,
+    CREATE,
+    DELETE,
     LIST
 }

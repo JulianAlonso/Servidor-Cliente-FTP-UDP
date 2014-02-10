@@ -9,6 +9,7 @@ import com.Julian.Server.Utils.CreateAndDeleteUtils;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +38,9 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Borrar carpeta o archivo seleccionado.
+                DirectoryPanel.setElements(SendUtils.deleteFile(
+                        DirectoryPanel.getSelectedItem()).getModel());
+                System.out.println("Eliminado");
             }
         };
     }
@@ -50,7 +53,11 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Crear una nueva carpeta.
+                String element = (String)JOptionPane.showInputDialog(
+                        null, "Introduce el nombre:", "Nueva Carpeta",
+                        JOptionPane.PLAIN_MESSAGE,null, null, "Nueva Carpeta");
+                if(element != null)
+                    DirectoryPanel.setElements(SendUtils.createDirectory(element).getModel());
             }
         };
     }

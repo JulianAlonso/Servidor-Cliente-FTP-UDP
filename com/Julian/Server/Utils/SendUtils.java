@@ -31,7 +31,7 @@ public class SendUtils {
     
     public static void downloadFile(Message message, File file) {
         FileMessage send = new FileMessage(Header.DOWNLOAD, message.getAddress(), message.getPort(), file);
-        com.Julian.Client.Utils.Send.send(send, message.getAddress(), message.getPort());
+        Send.send(send, message.getAddress(), message.getPort());
     }
     
 }
