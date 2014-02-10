@@ -26,6 +26,10 @@ public class DirectoryPanel extends JPanel {
         DirectoryPanel.dir.setModel(elements);
     }
     
+    public static String getSelectedItem() {
+        return DirectoryPanel.dir.getSelectedValue().toString();
+    }
+    
     private void generateComponents() {
         DirectoryPanel.dir = new JList();
         this.dirPane = new JScrollPane(dir);

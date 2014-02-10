@@ -1,6 +1,7 @@
 package com.Julian.Client.Utils;
 
 import com.Julian.Client.Configuration.Config;
+import com.Julian.Entitys.ElementMessage;
 import com.Julian.Entitys.FileMessage;
 import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.ListMessage;
@@ -38,4 +39,10 @@ public class SendUtils {
         //TODO recivir comprobacion de que se ha enviado satisfactoriamente.
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
+    
+   public static FileMessage downloadFile(String element) {
+       ElementMessage download = new ElementMessage(Header.DOWNLOAD, Config.CLIENT_ADDRESS, Config.PORT_CLIENT, element);
+       Send.send(download, Config.SERVER_ADDRESS, Config.PORT_SERVER);
+       return (FileMessage)Receive.receive(Config.PORT_CLIENT);
+   }
 }

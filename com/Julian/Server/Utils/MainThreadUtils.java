@@ -4,6 +4,7 @@
  */
 package com.Julian.Server.Utils;
 
+import com.Julian.Entitys.ElementMessage;
 import com.Julian.Entitys.FileMessage;
 import com.Julian.Entitys.MoveMessage;
 import com.Julian.Entitys.Message;
@@ -28,6 +29,9 @@ public class MainThreadUtils {
                         (FileMessage)message);
                 break;
             case DOWNLOAD:
+                Clients.getClient(
+                        message.getAddress()).sendFile(
+                        (ElementMessage)message);
                 break;
             case MOVEDOWN:
                 Clients.getClient(

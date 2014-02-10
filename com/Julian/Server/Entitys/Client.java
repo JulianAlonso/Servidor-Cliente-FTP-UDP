@@ -2,6 +2,7 @@
 
 package com.Julian.Server.Entitys;
 
+import com.Julian.Entitys.ElementMessage;
 import com.Julian.Entitys.FileMessage;
 import com.Julian.Entitys.Message;
 import com.Julian.Entitys.MoveMessage;
@@ -60,5 +61,11 @@ public class Client {
     public void createFile(FileMessage message) {
         if (CreateAndDeleteUtils.createFile(message, getActualDirectory()))
             SendUtils.sendCustomList(message, getActualDirectory().list());
+    }
+    
+    public void sendFile(ElementMessage message) {
+        SendUtils.downloadFile(message, 
+                new File(getActualDirectory().getPath()
+                         +"/"+message.getElementName()));
     }
 }

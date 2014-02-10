@@ -5,6 +5,7 @@ package com.Julian.Client.Res;
 import com.Julian.Client.GUI.Components.DirectoryPanel;
 import com.Julian.Client.Utils.SendUtils;
 import com.Julian.Client.Utils.Selector;
+import com.Julian.Server.Utils.CreateAndDeleteUtils;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -78,7 +79,11 @@ public class FunctionButtonListeners {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Crear una nueva carpeta.
+                File destinationDirectory = Selector.getJFDirectory();
+                if(destinationDirectory != null)
+                    CreateAndDeleteUtils.createFile(SendUtils.downloadFile(
+                            DirectoryPanel.getSelectedItem()), destinationDirectory);
+                
             }
         };
     }
