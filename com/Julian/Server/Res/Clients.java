@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author julialonso
  */
 public class Clients {
+    
     private static ArrayList<Client> clients = new ArrayList<>();
     
     public synchronized static Client getClient(int port) {

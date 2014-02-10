@@ -17,6 +17,10 @@ import com.Julian.Server.Res.Clients;
  */
 public class MainThreadUtils {
     
+    /**
+     * Hace lo debido segun el tipo de header que venga en el mensaje.
+     * @param message Mensaje recibido.
+     */
     public static void routeMessage(Message message) {
         switch(message.getHeader()) {
             case CONECT: 

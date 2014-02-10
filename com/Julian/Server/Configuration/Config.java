@@ -14,10 +14,18 @@ public class Config {
     public static int PORT_SERVER = 9998;
     private static File documentRoot;
     
+    /**
+     * Set de document root.
+     * @param documentRoot FILE.
+     */
     public static void setDocumentRoot(File documentRoot) {
         Config.documentRoot = documentRoot;
     }
     
+    /**
+     * Returns the document root.
+     * @return File
+     */
     public static File getDocumentRoot() {
         return Config.documentRoot;
     }

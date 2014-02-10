@@ -9,7 +9,12 @@ import javax.swing.DefaultListModel;
  * @author julialonso
  */
 public class Gets {
-
+    
+    /**
+     * Devuelve un nuevo deafultListModel segun el array de String que le pasen.
+     * @param elements Sring[].
+     * @return DefaultListModel
+     */
     public static DefaultListModel getLisModel(String[] elements) {
         DefaultListModel dfl = new DefaultListModel();
 

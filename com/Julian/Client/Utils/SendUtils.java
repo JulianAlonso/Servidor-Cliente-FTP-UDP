@@ -15,12 +15,23 @@ import java.io.File;
  */
 public class SendUtils {
     
+    /**
+     * Envia el mensaje de conexion inicial y recibe el listMessaje 
+     * con el listmodel del document
+     * root
+     * @return ListMessage
+     */
     public static ListMessage connect() {
         Message connect = new Message(Header.CONECT, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
         Send.send(connect, Config.SERVER_ADDRESS, Config.PORT_SERVER);
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
     
+    /**
+     * 
+     * @param element
+     * @return 
+     */
     public static ListMessage moveDownTo(String element) {
         MoveMessage down = new MoveMessage(Header.MOVEDOWN, element, Config.CLIENT_ADDRESS, Config.PORT_CLIENT);
         Send.send(down, Config.SERVER_ADDRESS, Config.PORT_SERVER);
@@ -36,7 +47,6 @@ public class SendUtils {
     public static ListMessage uploadFile(File file) {
         FileMessage upload = new FileMessage(Header.UPLOAD, Config.CLIENT_ADDRESS, Config.PORT_CLIENT, file);
         Send.send(upload, Config.SERVER_ADDRESS, Config.PORT_SERVER);
-        //TODO recivir comprobacion de que se ha enviado satisfactoriamente.
         return (ListMessage)Receive.receive(Config.PORT_CLIENT);
     }
     

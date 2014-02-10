@@ -23,6 +23,7 @@ public class MainThread extends Thread {
     public void run() {
         while(true) {
             Object receive = Receive.receive(Config.PORT_SERVER);
+            
             if(receive instanceof Message) {
                 MainThreadUtils.routeMessage((Message)receive);
             }

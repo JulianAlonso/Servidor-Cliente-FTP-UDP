@@ -44,6 +44,10 @@ public class Client {
         return this.actualDirectory;
     }
     
+    /**
+     * Se mueve al directorio seleccionado.
+     * @param message - Mensaje recibido del cliente, ya casteado.
+     */
     public void moveDownAndSend(MoveMessage message) {
         if(Checks.isDirectory(message.getElement(), getActualDirectory()))
             setActualDirectory(new File(getActualDirectory()+"/"+message.getElement()));
@@ -51,6 +55,10 @@ public class Client {
         SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
+    /**
+     * Se mueve al padre del directorio actual y se lo envia al cliente.
+     * @param message - Mensaje recibido del cliente.
+     */
     public void moveUpAndSend(Message message) {
         if(!actualDirectory.getPath().equals(Config.getDocumentRoot().getPath()))
             setActualDirectory(new File(getActualDirectory().getParent()));
@@ -58,23 +66,39 @@ public class Client {
         SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
+    /**
+     * Crea el fichero con el fichero recibido del cliente.
+     * @param message - Mensaje recibido del clinte, ya casteado.
+     */
     public void createFile(FileMessage message) {
         if (CreateAndDeleteUtils.createFile(message, getActualDirectory()))
             SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
+    /**
+     * Envia un fichero seleccionado por el cliente.
+     * @param message - Mensaje recibido del cliente, ya casteado.
+     */
     public void sendFile(ElementMessage message) {
         SendUtils.downloadFile(message, 
                 new File(getActualDirectory().getPath()
                          +"/"+message.getElementName()));
     }
     
+    /**
+     * Crea una carpeta con el nombre recibido del cliente.
+     * @param message - Mensaje recibido del cliente, ya casteado.
+     */
     public void createFolder(ElementMessage message) {
         File directory = new File(getActualDirectory().getPath()+"/"+message.getElementName());
         directory.mkdir();
         SendUtils.sendCustomList(message, getActualDirectory().list());
     }
     
+    /**
+     * Borra la carpeta elegida por el cliente.
+     * @param message - Mensaje recibido del clinete, ya casteado.
+     */
     public void deleteFolder(ElementMessage message) {
         File directory = new File(getActualDirectory().getPath()+"/"+message.getElementName());
         CreateAndDeleteUtils.deleteDirectory(directory);

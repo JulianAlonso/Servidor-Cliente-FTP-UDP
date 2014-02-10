@@ -25,10 +25,18 @@ public class FileMessage extends Message {
         } catch (IOException ex) {/* */}
     }
     
+    /**
+     * Devuelve el nombre del fichero.
+     * @return String.
+     */
     public String getName() {
         return this.name;
     }
     
+    /**
+     * Devuelve los datos del fichero
+     * @return byte[]
+     */
     public byte[] getData() {
         return this.data;
     }

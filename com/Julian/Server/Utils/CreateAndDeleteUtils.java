@@ -26,6 +26,12 @@ public class CreateAndDeleteUtils {
         }
     }
 
+    /**
+     * RECURSIVO.
+     * Borra todos los ficheros dentro de una carpeta y la carpta en si misma.
+     * Se llamara a si mismo si encuentra una carpeta dentro.
+     * @param directory - Directorio o fichero a borrar.
+     */
     public static void deleteDirectory(File directory) {
         if (directory.isDirectory()) {
             File[] files = directory.listFiles();

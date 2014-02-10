@@ -20,6 +20,10 @@ public class ListMessage extends Message {
         this.listModel = listModel;
     }
      
+    /**
+     * Devuelve el listmodel del mensaje.
+     * @return DefaultListModel.
+     */
     public DefaultListModel getModel() {
         return this.listModel;
     }

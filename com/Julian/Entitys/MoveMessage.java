@@ -17,6 +17,10 @@ public class MoveMessage extends Message {
         this.element = element;
     }
     
+    /**
+     * Devuelve el elemento.
+     * @return String
+     */
     public String getElement() {
         return this.element;
     }

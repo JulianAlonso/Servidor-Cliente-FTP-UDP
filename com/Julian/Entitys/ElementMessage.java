@@ -17,6 +17,10 @@ public class ElementMessage extends Message {
         this.elementName = elementName;
     }
     
+    /**
+     * Devuelve el elemento.
+     * @return String
+     */
     public String getElementName() {
         return this.elementName;
     }
