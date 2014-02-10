@@ -11,11 +11,11 @@ import java.io.IOException;
  * @author julialonso
  */
 public class CreateAndDeleteUtils {
-    
+
     public static boolean createFile(FileMessage fm, File actualDirectory) {
         File uploadedFile = new File(actualDirectory.getAbsolutePath()
                 + "/" + fm.getName());
-        
+
         try (FileOutputStream fos = new FileOutputStream(uploadedFile)) {
             fos.write(fm.getData());
             return true;
@@ -23,17 +23,20 @@ public class CreateAndDeleteUtils {
             return false;
         } catch (IOException ex) {
             return false;
-        } 
-    }
-    
-    public static void deleteDirectory(File directory) {
-        File[] files = directory.listFiles();
-        for(File file: files) {
-            if(file.isDirectory())
-                deleteDirectory(file);
-            else
-                file.delete();
         }
+    }
+
+    public static void deleteDirectory(File directory) {
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteDirectory(file);
+                } else {
+                    file.delete();
+                }
+            }
+        } 
         directory.delete();
     }
 }
