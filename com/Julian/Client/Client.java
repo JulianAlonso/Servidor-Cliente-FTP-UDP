@@ -7,7 +7,7 @@ import com.Julian.Client.GUI.GUIClient;
 import com.Julian.Client.Utils.SendUtils;
 
 /**
- *
+ * Programa principal del cliente, este lanzara todo lo demas.
  * @author julialonso
  */
 public class Client {

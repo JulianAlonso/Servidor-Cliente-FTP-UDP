@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
- *
+ * Panel de navegacion.
  * @author julialonso
  */
 public class DirectoryPanel extends JPanel {

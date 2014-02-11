@@ -5,7 +5,7 @@
 package com.Julian.Client.Configuration;
 
 /**
- *
+ * Configuracion del programa con los puertos y las direcciones IP.
  * @author admin
  */
 public final class Config {

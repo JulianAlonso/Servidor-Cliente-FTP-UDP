@@ -14,6 +14,13 @@ import java.io.IOException;
  */
 public class CreateAndDeleteUtils {
     
+    /**
+     * Crea el fichero que esta en el FileMessage en el "destinationDirectory"
+     * @param fm - FileMessage - contiene el nombre y los datos del fichero.
+     * @param destinationDirectory - File - Directorio en el que crearemos el 
+     * archivo.
+     * @return Booelan - true si ha creado el archivo.
+     */
     public static boolean createFile(FileMessage fm, File destinationDirectory) {
         File downloadedFile = new File(destinationDirectory.getAbsolutePath()
                 + "/" + fm.getName());

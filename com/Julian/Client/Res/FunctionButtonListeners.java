@@ -47,7 +47,7 @@ public class FunctionButtonListeners {
     
     /**
      * Create a new Folder.
-     * @return 
+     * @return ActionListener
      */
     public static ActionListener getCreateListener() {
         return new ActionListener() {
@@ -64,7 +64,7 @@ public class FunctionButtonListeners {
     
     /**
      * Upload an archive to actual folder.
-     * @return 
+     * @return ActionListener
      */
     public static ActionListener uploadListener() {
         return new ActionListener() {
@@ -80,7 +80,7 @@ public class FunctionButtonListeners {
     
     /**
      * Download the selected archive.
-     * @return 
+     * @return ActionListener
      */
     public static ActionListener downloadListener() {
         return new ActionListener() {

@@ -15,7 +15,7 @@ import javax.swing.JButton;
 
 
 /**
- *
+ * Botton con funcion e imagen o texto incorporados.
  * @author Álvaro
  */
 public class FunctionButton extends JButton{

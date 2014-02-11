@@ -3,10 +3,11 @@
 package com.Julian.Client.Configuration;
 
 /**
- *
+ * Configuracion del cliente.
  * @author julialonso
  */
 public class GUIConfig {
+    
     private static String DOCUMENT_ROOT;
     private static String ACTUAL_DIR;
     

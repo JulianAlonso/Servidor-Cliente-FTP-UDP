@@ -13,7 +13,7 @@ import java.awt.Insets;
 import javax.swing.JFrame;
 
 /**
- *
+ * Gui visible del cliente.
  * @author julialonso
  */
 public class GUIClient extends JFrame {

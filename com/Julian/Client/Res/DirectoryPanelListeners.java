@@ -14,6 +14,10 @@ import javax.swing.JList;
  */
 public class DirectoryPanelListeners {
     
+    /**
+     * Navegara a la carpeta seleccionada.
+     * @return MouseListener
+     */
     public static MouseListener getDoubleClickListener() {
         return new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
@@ -25,8 +29,7 @@ public class DirectoryPanelListeners {
                             SendUtils.moveDownTo(
                             (String)list.getModel().getElementAt(index)).getModel());
                     } catch (Exception ex) {
-                        System.out.println("This is not an archive");
-                        //TODO: --Throws a Dialog.
+                        //TODO -- Lanza un dialogo con error.
                     } 
                 } 
             }
